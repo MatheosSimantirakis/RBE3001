@@ -1,0 +1,27 @@
+classdef lab3
+        % Many properties are abstracted into OM_X_arm and DX_XM430_W350. classes
+    % Hopefully, you should only need what's in this class to accomplish everything.
+    % But feel free to poke around!
+    properties
+        mDim; % Stores the robot link dimentions (mm)
+        mOtherDim; % Stores extraneous second link dimensions (mm)
+        links; % dimentions been selected for calculation 
+        rotationAroundZ % Stores if the joints rotation around Z axis true as yes, false as no
+        currentSetPoints; % Stores latest set point
+        isMoveable;
+        dh;
+    end
+
+    methods
+        % Creates constants and connects via serial
+        % Super class constructor called implicitly
+        % Add startup functionality here
+        function self = lab3()
+            % Robot Dimensions
+            self.mDim = [96.326, 130.23, 124, 133.4]; % (mm)
+            self.mOtherDim = [128, 24]; % (mm)
+            self.links = [96.326, 128, 24, 124, 133.4];
+        end
+        
+    end
+end
